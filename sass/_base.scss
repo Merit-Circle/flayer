@@ -1,107 +1,122 @@
-html, body{
-    font-family: "Liberation Sans", system-ui, -apple-system, "Helvetica Neue", Helvetica, "Segoe UI", Arial, "Ubuntu", "Noto Sans", "Oxygen-Sans", sans-serif;
+html,
+body {
+  font-family: "Helvetica Neue", system-ui, -apple-system, sans-serif;
 }
 
-html, body, h1, h2, h3, h4, h5, h6{
-    margin: 0;
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
 }
-body{
-    @media all and (display-mode: fullscreen) {
-        width: 100%;
-        height: 100%;
-        overflow: scroll;
-    }
+body {
+  @media all and (display-mode: fullscreen) {
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+  }
 }
 //need this for scrolling to work in firefox full screen mode
 //for full list of browser prefixes, see
 //https://developer.mozilla.org/en-US/docs/Web/CSS/:fullscreen
-body:-moz-full-screen .total-page{
-    width: 100vw;
-    height: 100vh;
-    overflow: scroll;
+body:-moz-full-screen .total-page {
+  width: 100vw;
+  height: 100vh;
+  overflow: scroll;
 }
 
 //so page width expands as canvases expand, so position sticky continues to work
 //as things are zoomed in
-.total-page{
+.total-page {
+  display: inline-block;
+}
+
+#app {
+  //for firefox full screen mode so that unsplash attribution remains sticky
+  @media all and (display-mode: fullscreen) {
     display: inline-block;
+  }
 }
 
-#app{
-    //for firefox full screen mode so that unsplash attribution remains sticky
-    @media all and (display-mode: fullscreen) {
-        display: inline-block;
-    }
+.hidden,
+[v-cloak],
+datalist {
+  display: none;
 }
 
-.hidden, [v-cloak], datalist{
-    display: none;
+a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
-a{
-    text-decoration: none;
-    &:hover{
-        text-decoration: underline;
-    }
+canvas {
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -webkit-crisp-edges;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
 }
 
-canvas{
-    image-rendering: -moz-crisp-edges;
-    image-rendering: -webkit-crisp-edges;
-    image-rendering: pixelated;
-    image-rendering: crisp-edges;
+input[disabled="disabled"],
+button[disabled="disabled"] {
+  cursor: not-allowed;
 }
 
-input[disabled="disabled"], button[disabled="disabled"]{
-    cursor: not-allowed;
+fieldset {
+  border: none;
+  padding: 0;
 }
-
-fieldset{
-    border: none;
-    padding: 0;
-}
-legend{
-    font-size: 14px;
+legend {
+  font-size: 14px;
 }
 
 //select and color input styles loosely based on bootstrap 3 .form-control
-select, input{
-    font-size: 14px;
-    line-height: 1.42857;
-    padding: 4px 6px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
-    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+select,
+input {
+  font-size: 14px;
+  line-height: 1.42857;
+  padding: 4px 6px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
 
-    &:focus{
-        border-color: #66afe9;
-        box-shadow: inset 0 1px 1px rgba(0,0,0,0.075), 0 0 8px rgba(102,175,233,0.6);
-        outline: 0;
-    }
+  &:focus {
+    border-color: #66afe9;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
+      0 0 8px rgba(102, 175, 233, 0.6);
+    outline: 0;
+  }
 }
 //text inputs
-input:not([type]), input[type="text"], input[type="url"]{
-    width: 16em;
-    max-width: 100%;
-    color: #333;
+input:not([type]),
+input[type="text"],
+input[type="url"] {
+  width: 16em;
+  max-width: 100%;
+  color: #333;
 }
-input[type="range"]{
-    flex-basis: 50%;
-    max-width: 100%;
+input[type="range"] {
+  flex-basis: 50%;
+  max-width: 100%;
 }
 
-.spread-content{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    
-    //add vertical margin to items when wrapped
-    //https://stackoverflow.com/questions/30887071/margin-top-only-when-the-flex-item-is-wrapped
-    margin-bottom: -1 * $spread_content_margin_when_wrapped;
-    & > *{
-        margin-bottom: $spread_content_margin_when_wrapped;
-    }
+.spread-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+
+  //add vertical margin to items when wrapped
+  //https://stackoverflow.com/questions/30887071/margin-top-only-when-the-flex-item-is-wrapped
+  margin-bottom: -1 * $spread_content_margin_when_wrapped;
+  & > * {
+    margin-bottom: $spread_content_margin_when_wrapped;
+  }
 }

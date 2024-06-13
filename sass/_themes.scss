@@ -2,78 +2,79 @@
 //using css variables, since that messes up default link colors
 //when variables are unset
 
-body{
-    @include background_color_transition;
-    --main-bg-color: white;
-    --pinned-controls-bg-color: white;
-    --main-text-color: black;
-    --hint-text-color: #777;
-    --main-text-color-rgb: 0, 0, 0;
-    --disabled-text-color: #ddd;
-    --border-color: #dee2e6;
-    --pinned-controls-border-color: #dee2e6;
+body {
+  color: #f4f5ec;
+  background-color: #131313;
+  @include background_color_transition;
+  --main-bg-color: #131313;
+  --pinned-controls-bg-color: #303030fc; //this is intentionally different from the background color, so controls are slightly lighter
+  --main-text-color: #f4f5ec;
+  --main-text-color-rgb: 240, 239, 240;
+  --disabled-text-color: #666;
+  --border-color: #ffffff24;
+  --pinned-controls-border-color: #ffffff24;
 }
-.editor-white{
-    color: black;
-    background-color: white;
-    --main-bg-color: white;
-    --pinned-controls-bg-color: white;
-    --main-text-color: black;
-    --main-text-color-rgb: 0, 0, 0;
-    --disabled-text-color: #ddd;
-    --border-color: #dee2e6;
-    --pinned-controls-border-color: #dee2e6;
+.editor-white {
+  color: #f4f5ec;
+  background-color: #131313;
+  --main-bg-color: #131313;
+  --pinned-controls-bg-color: #303030fc; //this is intentionally different from the background color, so controls are slightly lighter
+  --main-text-color: #f4f5ec;
+  --main-text-color-rgb: 240, 239, 240;
+  --disabled-text-color: #666;
+  --border-color: #ffffff24;
+  --pinned-controls-border-color: #ffffff24;
 }
-.editor-light{
-    color: black;
-    background-color: #ccc;
-    --main-bg-color: #ccc;
-    --pinned-controls-bg-color: #ddd; //this is intentionally different from the background color, so controls are slightly lighter
-    --main-text-color: black;
-    --disabled-text-color: #aaa;
-    --main-text-color-rgb: 0, 0, 0;
-    --border-color: #aaa;
-    --pinned-controls-border-color: #bec2c6;
-    --hint-text-color: #666;
-}
-
-.editor-dark{
-    //tint of magenta #FF00FF
-    color: #f0eff0;
-    background-color: #444;
-    --main-bg-color: #444;
-    --pinned-controls-bg-color: #555; //this is intentionally different from the background color, so controls are slightly lighter
-    --main-text-color: #f0eff0;
-    --main-text-color-rgb: 240, 239, 240;
-    --disabled-text-color: #666;
-    --border-color: #6a6a6a;
-    --pinned-controls-border-color: #6a6a6a;
+.editor-light {
+  color: #f4f5ec;
+  background-color: #131313;
+  --main-bg-color: #131313;
+  --pinned-controls-bg-color: #303030fc; //this is intentionally different from the background color, so controls are slightly lighter
+  --main-text-color: #f4f5ec;
+  --main-text-color-rgb: 240, 239, 240;
+  --disabled-text-color: #666;
+  --border-color: #ffffff24;
+  --pinned-controls-border-color: #ffffff24;
 }
 
-.editor-black{
-    //tint of magenta #FF00FF
-    color: #f0eff0;
-    background-color: black;
-    --main-bg-color: black;
-    --pinned-controls-bg-color: black;
-    --main-text-color: #f0eff0;
-    --main-text-color-rgb: 240, 239, 240;
-    --disabled-text-color: #666;
-    --border-color: #7a7a7a;
-    --pinned-controls-border-color: #7a7a7a;
+.editor-dark {
+  //tint of magenta #FF00FF
+  color: #f4f5ec;
+  background-color: #131313;
+  --main-bg-color: #131313;
+  --pinned-controls-bg-color: #303030fc; //this is intentionally different from the background color, so controls are slightly lighter
+  --main-text-color: #f4f5ec;
+  --main-text-color-rgb: 240, 239, 240;
+  --disabled-text-color: #666;
+  --border-color: #ffffff24;
+  --pinned-controls-border-color: #ffffff24;
+}
+
+.editor-black {
+  //tint of magenta #FF00FF
+  color: #f4f5ec;
+  background-color: #131313;
+  --main-bg-color: #131313;
+  --pinned-controls-bg-color: #303030fc; //this is intentionally different from the background color, so controls are slightly lighter
+  --main-text-color: #f4f5ec;
+  --main-text-color-rgb: 240, 239, 240;
+  --disabled-text-color: #666;
+  --border-color: #ffffff24;
+  --pinned-controls-border-color: #ffffff24;
 }
 
 //colors links in dark and black themes
 //can't use variables since we want to use default link colors
 //for light themes
-.editor-black, .editor-dark{
-    a{
-        //tints of magenta #FF00FF
-        &:link{
-            color: #c1b8c1
-        }
-        &:visited{
-            color: #958e95
-        }
+.editor-black,
+.editor-dark {
+  a {
+    //tints of magenta #FF00FF
+    &:link {
+      color: #c1b8c1;
     }
+    &:visited {
+      color: #958e95;
+    }
+  }
 }

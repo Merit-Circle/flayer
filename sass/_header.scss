@@ -1,44 +1,31 @@
-.header{
-    padding: 8px $global_horizontal_padding 4px;
-    position: -webkit-sticky;
-    position: sticky;
-    left: 0;
+.header {
+  position: -webkit-sticky;
+  position: sticky;
+  margin-top: 24px;
+  margin-left: 24px;
 
-    @media all and (display-mode: fullscreen) {
-        display: inline-block;
-    }
+  @media all and (display-mode: fullscreen) {
+    display: inline-block;
+  }
 }
-.nav{
-    display: flex;
-    justify-content: space-between;
-    ul{
-        list-style-type: none;
-        display: flex;
-        flex-wrap: wrap;
-        margin: 0 0 0 1em;
-        padding: 0;
-        align-self: center;
-        a{
-            color: var(--hint-text-color);
-        }
-    }
-    li:first-of-type{
-        margin-right: 1.5em;
-    }
+.nav {
+  svg {
+    height: 40px;
+  }
 }
 
-.brand{
-    font-size: 20px;
+.brand {
+  font-size: 20px;
 }
 
-@include pinned_controls_mq{
-    .header{
-        //so position sticky works
-        display: inline-block;
+@include pinned_controls_mq {
+  .header {
+    //so position sticky works
+    display: inline-block;
+  }
+  .nav {
+    li:first-of-type {
+      margin-right: 0.5em;
     }
-    .nav{
-        li:first-of-type{
-            margin-right: 0.5em;
-        }
-    }
+  }
 }

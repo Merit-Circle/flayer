@@ -22,56 +22,58 @@
 // 	}
 // }
 
-
 //styles for desktop
-@include pinned_controls_mq{
-	//reset tablet styles
-	.controls{
-		align-items: center;
-	}
-	//desktop styles
-	.controls-container{
-		position: fixed;
-		z-index: 11;
-		display: block;
-		background-color: var(--pinned-controls-bg-color);
-		max-width: 100%;
-		max-height: 100%;
-		top: 0;
-		right: 0;
-		overflow-y: scroll;
-		box-sizing: border-box;
-		width: $pinned_dither_controls_width;
-		padding: 0;
-	}
+@include pinned_controls_mq {
+  //reset tablet styles
+  .controls {
+    align-items: center;
+  }
+  //desktop styles
+  .controls-container {
+    position: fixed;
+    z-index: 11;
+    display: block;
+    background-color: var(--pinned-controls-bg-color);
+    max-width: 100%;
+    max-height: 100%;
+    top: 0;
+    right: 0;
+    overflow-y: scroll;
+    box-sizing: border-box;
+    width: $pinned_dither_controls_width;
+    padding: 0;
+    border-bottom-left-radius: 8px;
+    box-shadow: -20px -10px 20px -19px rgba(0, 0, 0, 0.35);
+  }
 
-	.super-dither-controls-container, .global-controls-panel{
-		border-left: $controls_border;
-		padding: 8px $global_horizontal_padding;
-	}
-	.super-dither-controls-container{
-		border-bottom: $controls_border;
-	}
-	.global-controls-panel{
-		margin: 0;
-		min-height: $global_controls_height;
-		
-		//for before image has loaded
-		//and there are no controls below it
-		&.no-image{
-			border-bottom: $controls_border;
-			border-radius: 3px;
-		}
-	}
+  .super-dither-controls-container,
+  .global-controls-panel {
+    // border-left: $controls_border;
+    padding: 8px $global_horizontal_padding;
+  }
+  .super-dither-controls-container {
+    // border-bottom: $controls_border;
+  }
+  .global-controls-panel {
+    margin: 0;
+    min-height: $global_controls_height;
+
+    //for before image has loaded
+    //and there are no controls below it
+    &.no-image {
+      // border-bottom: $controls_border;
+      border-radius: 4px;
+    }
+  }
 }
 
 //otherwise will overlap chrome scrollbars
 @media all and (display-mode: fullscreen) {
-	.controls-container {
-		bottom: $chrome_fullscreen_horizontal_scrollbar_height;
+  .controls-container {
+    bottom: $chrome_fullscreen_horizontal_scrollbar_height;
 
-		body:-moz-full-screen & {
-			bottom: 0;
-		}
-	}
+    body:-moz-full-screen & {
+      bottom: 0;
+    }
+  }
 }

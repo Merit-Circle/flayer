@@ -26,8 +26,8 @@ function defaultPalettes() {
         "#351757",
         "#47c1d1",
         "#cc3d1d",
-        "#82e063"
-      ]
+        "#82e063",
+      ],
     },
     {
       title: "Primaries",
@@ -49,8 +49,8 @@ function defaultPalettes() {
         "#dbd21a",
         "#417bf9",
         "#ec945d",
-        "#41f4ac"
-      ]
+        "#41f4ac",
+      ],
     },
     {
       title: "Imperial",
@@ -72,8 +72,8 @@ function defaultPalettes() {
         "#f23472",
         "#edc35f",
         "#b027c3",
-        "#1f3117"
-      ]
+        "#1f3117",
+      ],
     },
     {
       title: "Galaxy",
@@ -95,8 +95,8 @@ function defaultPalettes() {
         "#914343",
         "#f4ee97",
         "#7f1272",
-        "#f9e8f8"
-      ]
+        "#f9e8f8",
+      ],
     },
     {
       title: "Ketchup",
@@ -118,8 +118,8 @@ function defaultPalettes() {
         "#485647",
         "#721027",
         "#a8c8a2",
-        "#c46a92"
-      ]
+        "#c46a92",
+      ],
     },
     {
       title: "Pueblo",
@@ -141,8 +141,8 @@ function defaultPalettes() {
         "#fce8ec",
         "#d5f7e2",
         "#595671",
-        "#95a08d"
-      ]
+        "#95a08d",
+      ],
     },
     {
       title: "Kelp",
@@ -164,8 +164,8 @@ function defaultPalettes() {
         "#c6d884",
         "#70a18d",
         "#dea07e",
-        "#b4e6c7"
-      ]
+        "#b4e6c7",
+      ],
     },
     {
       title: "Seance",
@@ -187,8 +187,8 @@ function defaultPalettes() {
         "#cfc65e",
         "#e9ccf1",
         "#f4f3aa",
-        "#daf2b6"
-      ]
+        "#daf2b6",
+      ],
     },
     {
       title: "Rose",
@@ -210,8 +210,8 @@ function defaultPalettes() {
         "#D1794E",
         "#fae4e6",
         "#f3cfb5",
-        "#f8caf3"
-      ]
+        "#f8caf3",
+      ],
     },
     {
       title: "Wildfire",
@@ -233,8 +233,8 @@ function defaultPalettes() {
         "#27212b",
         "#a03a0e",
         "#f2e0af",
-        "#e37343"
-      ]
+        "#e37343",
+      ],
     },
     {
       title: "Blueberry",
@@ -256,8 +256,8 @@ function defaultPalettes() {
         "#e5ccec",
         "#2e2e3c",
         "#d6edf2",
-        "#2c453a"
-      ]
+        "#2c453a",
+      ],
     },
     {
       title: "Ocean",
@@ -279,8 +279,8 @@ function defaultPalettes() {
         "#128458",
         "#09616b",
         "#ae9a6c",
-        "#004c74"
-      ]
+        "#004c74",
+      ],
     },
     {
       title: "Lilac",
@@ -302,8 +302,8 @@ function defaultPalettes() {
         "#efddd5",
         "#f2e8f9",
         "#492b68",
-        "#fcfbd9"
-      ]
+        "#fcfbd9",
+      ],
     },
     {
       title: "Sepia",
@@ -325,8 +325,8 @@ function defaultPalettes() {
         "#493826",
         "#bfb59b",
         "#57431d",
-        "#aa8656"
-      ]
+        "#aa8656",
+      ],
     },
     {
       title: "Lichen",
@@ -348,8 +348,8 @@ function defaultPalettes() {
         "#ededb3",
         "#eaebbf",
         "#424b3b",
-        "#d5eaa0"
-      ]
+        "#d5eaa0",
+      ],
     },
     {
       title: "Bronze",
@@ -371,8 +371,8 @@ function defaultPalettes() {
         "#6f7a63",
         "#f3f3d8",
         "#55824c",
-        "#3b4837"
-      ]
+        "#3b4837",
+      ],
     },
     {
       title: "Shamrock",
@@ -394,8 +394,8 @@ function defaultPalettes() {
         "#1c4c0d",
         "#2f7034",
         "#3a4934",
-        "#a1d6a2"
-      ]
+        "#a1d6a2",
+      ],
     },
     {
       title: "Sandcastle",
@@ -417,8 +417,8 @@ function defaultPalettes() {
         "#543406",
         "#6b81b0",
         "#f5f4d1",
-        "#96d6ef"
-      ]
+        "#96d6ef",
+      ],
     },
     {
       title: "Apricot",
@@ -440,8 +440,8 @@ function defaultPalettes() {
         "#a15300",
         "#e2a748",
         "#90c4d2",
-        "#f5df97"
-      ]
+        "#f5df97",
+      ],
     },
     {
       title: "Goldust",
@@ -463,8 +463,8 @@ function defaultPalettes() {
         "#d8dc5f",
         "#a19547",
         "#f3f16a",
-        "#cdb519"
-      ]
+        "#cdb519",
+      ],
     },
     {
       title: "Brass",
@@ -486,8 +486,8 @@ function defaultPalettes() {
         "#e69f3a",
         "#f1eca4",
         "#32304c",
-        "#bfbd1d"
-      ]
+        "#bfbd1d",
+      ],
     },
     {
       title: "Patina",
@@ -509,8 +509,8 @@ function defaultPalettes() {
         "#eefcf7",
         "#c1eeee",
         "#ad6525",
-        "#f1dac2"
-      ]
+        "#f1dac2",
+      ],
     },
     {
       title: "Wildberry",
@@ -532,8 +532,8 @@ function defaultPalettes() {
         "#f8d5b9",
         "#fc34c7",
         "#fe7e9e",
-        "#7812d6"
-      ]
+        "#7812d6",
+      ],
     },
     {
       title: "Sunny",
@@ -555,8 +555,8 @@ function defaultPalettes() {
         "#f0f2a7",
         "#8c2343",
         "#eadb77",
-        "#815799"
-      ]
+        "#815799",
+      ],
     },
     {
       title: "Faded",
@@ -578,8 +578,8 @@ function defaultPalettes() {
         "#022a6c",
         "#1eb149",
         "#c8f6e3",
-        "#d47703"
-      ]
+        "#d47703",
+      ],
     },
     {
       title: "Neon",
@@ -601,8 +601,8 @@ function defaultPalettes() {
         "#eaf0c8",
         "#dd5bdd",
         "#9f73d5",
-        "#cac63e"
-      ]
+        "#cac63e",
+      ],
     },
     {
       title: "Watermelon",
@@ -624,8 +624,8 @@ function defaultPalettes() {
         "#e9d2c7",
         "#449d47",
         "#a62d47",
-        "#d97c81"
-      ]
+        "#d97c81",
+      ],
     },
     {
       title: "Crystals",
@@ -647,8 +647,8 @@ function defaultPalettes() {
         "#492a4d",
         "#555173",
         "#ab449e",
-        "#d3d673"
-      ]
+        "#d3d673",
+      ],
     },
     {
       title: "Monochrome",
@@ -670,8 +670,8 @@ function defaultPalettes() {
         "#2d2d2d",
         "#d2d2d2",
         "#3c3c3c",
-        "#787878"
-      ]
+        "#787878",
+      ],
     },
     {
       title: "Mondrianchromatic",
@@ -693,9 +693,9 @@ function defaultPalettes() {
         "#121069",
         "#e1eb24",
         "#ff0000",
-        "#25d534"
-      ]
-    }
+        "#25d534",
+      ],
+    },
   ];
 }
 
@@ -708,7 +708,7 @@ function getPalettes(minimumColorsLength) {
 
 //make sure each palette has at least the minimum number of colors
 function padPaletteColorsToMinimumLength(palettes, minimumColorsLength) {
-  return palettes.map(palette => {
+  return palettes.map((palette) => {
     if (!palette.isCustom && palette.colors.length < minimumColorsLength) {
       palette.colors = palette.colors.concat(
         ArrayUtil.create(minimumColorsLength - palette.colors.length, () => {
@@ -728,12 +728,12 @@ function generateUserSavedPalette(colors, savedPaletteId) {
   return {
     title: generateUserSavedPaletteTitle(savedPaletteId),
     colors: colors,
-    isSaved: true
+    isSaved: true,
   };
 }
 
 export default {
   get: getPalettes,
   generateUserSavedPalette,
-  padPaletteColorsToMinimumLength
+  padPaletteColorsToMinimumLength,
 };

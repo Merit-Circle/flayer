@@ -1,25 +1,36 @@
 <template>
-    <div class="controls-tab-container">
-        <fieldset>
-            <legend>Appearance</legend>
-            <div class="spread-content">
-                <label>Theme
-                    <select :value.number="currentEditorThemeIndex" @input="$emit('update:currentEditorThemeIndex', parseInt($event.target.value))">
-                        <template v-for="(theme, index) in editorThemes" :key="index">
-                            <option :value="index">{{theme.name}}</option>
-                        </template>
-                    </select>
-                </label>
-                <cycle-property-list 
-                    model-name="theme" 
-                    :model-value="currentEditorThemeIndex" 
-                    @update:model-value="newValue => $emit('update:currentEditorThemeIndex', newValue)"
-                    :array-length="editorThemes.length" 
-                />
-            </div>
-            <full-screen-mode-control/>
-        </fieldset>
-        <fieldset>
+  <div class="controls-tab-container">
+    <!-- <fieldset>
+      <legend>Appearance</legend>
+      <div class="spread-content">
+        <label
+          >Theme
+          <select
+            :value.number="currentEditorThemeIndex"
+            @input="
+              $emit(
+                'update:currentEditorThemeIndex',
+                parseInt($event.target.value)
+              )
+            "
+          >
+            <template v-for="(theme, index) in editorThemes" :key="index">
+              <option :value="index">{{ theme.name }}</option>
+            </template>
+          </select>
+        </label>
+        <cycle-property-list
+          model-name="theme"
+          :model-value="currentEditorThemeIndex"
+          @update:model-value="
+            (newValue) => $emit('update:currentEditorThemeIndex', newValue)
+          "
+          :array-length="editorThemes.length"
+        />
+      </div> -->
+    <!-- <full-screen-mode-control /> -->
+    <!-- </fieldset> -->
+    <!-- <fieldset>
             <legend>Performance</legend>
             <div class="spread-content" :class="$style.checkboxesContainer">
                 <checkbox 
@@ -49,87 +60,91 @@
                     @update:model-value="newValue => $emit('update:isWebglEnabled', newValue)"
                 />
             </div>
-        </fieldset>
+        </fieldset> -->
 
-        <div :class="$style.hint" v-for="hint in hints" :key="hint">
-            {{ hint }}
-        </div>
+    <div :class="$style.hint" v-for="hint in hints" :key="hint">
+      {{ hint }}
     </div>
+  </div>
 </template>
 
 <style lang="scss" module>
-    .checkboxesContainer {
-        gap: 16px;
-    }
-    .hint {
-        font-size: 0.8rem;
-    }
+.checkboxesContainer {
+  gap: 16px;
+}
+.hint {
+  font-size: 0.8rem;
+}
 </style>
 
 <script>
-import CyclePropertyList from './cycle-property-list.vue';
-import FullScreenModeControl from './full-screen-mode-control.vue';
-import Checkbox from './checkbox.vue';
+import CyclePropertyList from "./cycle-property-list.vue";
+import FullScreenModeControl from "./full-screen-mode-control.vue";
+import Checkbox from "./checkbox.vue";
 
 export default {
-    props: {
-        editorThemes: {
-            type: Array,
-            required: true,
-        },
-        isWebglSupported: {
-            type: Boolean,
-            required: true,
-        },
-        // v-models
-        currentEditorThemeIndex: {
-            type: Number,
-            required: true,
-        },
-        isLivePreviewEnabled: {
-            type: Boolean,
-            required: true,
-        },
-        isColorPickerLivePreviewEnabledSetting: {
-            type: Boolean,
-            required: true,
-        },
-        automaticallyResizeLargeImages: {
-            type: Boolean,
-            required: true,
-        },
-        isWebglEnabled: {
-            type: Boolean,
-            required: true,
-        },
+  props: {
+    editorThemes: {
+      type: Array,
+      required: true,
     },
-    components: {
-        CyclePropertyList,
-        FullScreenModeControl,
-        Checkbox,
+    isWebglSupported: {
+      type: Boolean,
+      required: true,
     },
-    computed: {
-        hints(){
-            const hints = [];
-
-            if(!this.isLivePreviewEnabled){
-                hints.push('To update the image output, use the “Dither” button.');
-            }
-            else if(!this.isColorPickerLivePreviewEnabledSetting){
-                hints.push('Colors won’t update until you press the color picker OK button.');
-            }
-
-            if(!this.automaticallyResizeLargeImages){
-                hints.push('Opening very large images can result in poor performance or browser crashes.');
-            }
-
-            if(this.isWebglSupported && !this.isWebglEnabled){
-                hints.push('With WebGL is disabled some image filters will not be available, and the Yliluoma 1, Yliluoma 2 and adaptive threshold dithers will be very slow.');
-            }
-
-
-            return hints;
-        },
+    // v-models
+    currentEditorThemeIndex: {
+      type: Number,
+      required: true,
     },
+    isLivePreviewEnabled: {
+      type: Boolean,
+      required: true,
+    },
+    isColorPickerLivePreviewEnabledSetting: {
+      type: Boolean,
+      required: true,
+    },
+    automaticallyResizeLargeImages: {
+      type: Boolean,
+      required: true,
+    },
+    isWebglEnabled: {
+      type: Boolean,
+      required: true,
+    },
+  },
+  components: {
+    CyclePropertyList,
+    FullScreenModeControl,
+    Checkbox,
+  },
+  computed: {
+    hints() {
+      const hints = [];
+
+      if (!this.isLivePreviewEnabled) {
+        hints.push("To update the image output, use the “Dither” button.");
+      } else if (!this.isColorPickerLivePreviewEnabledSetting) {
+        hints.push(
+          "Colors won’t update until you press the color picker OK button."
+        );
+      }
+
+      if (!this.automaticallyResizeLargeImages) {
+        hints.push(
+          "Opening very large images can result in poor performance or browser crashes."
+        );
+      }
+
+      if (this.isWebglSupported && !this.isWebglEnabled) {
+        hints.push(
+          "With WebGL is disabled some image filters will not be available, and the Yliluoma 1, Yliluoma 2 and adaptive threshold dithers will be very slow."
+        );
+      }
+
+      return hints;
+    },
+  },
 };
 </script>
