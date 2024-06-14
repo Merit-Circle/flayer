@@ -13,6 +13,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <link rel="stylesheet" type="text/css" href="<?= CSS_APP_URL; ?>"/>
         <link rel="apple-touch-icon" href="<?= BASE_URL.'apple-touch-icon.png' ?>"/>
+        <link rel="apple-touch-icon" href="<?= BASE_URL.'apple-touch-icon.png' ?>"/>
+        <meta property="og:url" content="https://flayer.vercel.app/" />
+      <meta property="og:image" content="https://flayer.vercel.app/og.png" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:image" content="https://flayer.vercel.app/og.png" />
     </head>
     <body>
         <?php //this extra .total-page div is unfortunately required for FireFox full screen mode to allow scrolling, instead of just cutting content off ?>
