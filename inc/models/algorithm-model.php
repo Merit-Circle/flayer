@@ -76,34 +76,7 @@ class OrderedMatrixPattern {
 
 function getOrderedMatrixPatterns(): array{
     return [
-        'BAYER_2'                   => new OrderedMatrixPattern('bayer', 2, true),
-        'BAYER_4'                   => new OrderedMatrixPattern('bayer', 4, true),
-        'BAYER_8'                   => new OrderedMatrixPattern('bayer', 8, true),
-        'BAYER_16'                  => new OrderedMatrixPattern('bayer', 16, true),
-        'HATCH_HORIZONTAL'          => new OrderedMatrixPattern('hatchHorizontal', 4),
-        'HATCH_VERTICAL'            => new OrderedMatrixPattern('hatchVertical', 4),
-        'HATCH_RIGHT'               => new OrderedMatrixPattern('hatchRight', 4),
-        'HATCH_LEFT'                => new OrderedMatrixPattern('hatchLeft', 4),
-        'CROSS_HATCH_HORIZONTAL'    => new OrderedMatrixPattern('crossHatchHorizontal', 4),
-        'CROSS_HATCH_VERTICAL'      => new OrderedMatrixPattern('crossHatchVertical', 4),
-        'CROSS_HATCH_RIGHT'         => new OrderedMatrixPattern('crossHatchRight', 4),
-        'CROSS_HATCH_LEFT'          => new OrderedMatrixPattern('crossHatchLeft', 4),
-        'ZIGZAG_HORIZONTAL_4'       => new OrderedMatrixPattern('zigzagHorizontal',  4, true),
-        'ZIGZAG_VERTICAL_4'         => new OrderedMatrixPattern('zigzagVertical',    4, true),
-        'ZIGZAG_HORIZONTAL_8'       => new OrderedMatrixPattern('zigzagHorizontal',  8, true),
-        'ZIGZAG_VERTICAL_8'         => new OrderedMatrixPattern('zigzagVertical',    8, true),
-        'ZIGZAG_HORIZONTAL_16'      => new OrderedMatrixPattern('zigzagHorizontal', 16, true),
-        'ZIGZAG_VERTICAL_16'        => new OrderedMatrixPattern('zigzagVertical',   16, true),
-        'CHECKERBOARD'              => new OrderedMatrixPattern('checkerboard', 2),
-        'CLUSTER'                   => new OrderedMatrixPattern('cluster', 4),
-        'FISHNET'                   => new OrderedMatrixPattern('fishnet', 8),
-        'DOT_4'                     => new OrderedMatrixPattern('dot', 4, true),
-        'DOT_8'                     => new OrderedMatrixPattern('dot', 8, true),
-        'HALFTONE'                  => new OrderedMatrixPattern('halftone', 8),
-        'SQUARE_2'                  => new OrderedMatrixPattern('square', 2, true),
-        'SQUARE_4'                  => new OrderedMatrixPattern('square', 4, true),
-        'SQUARE_8'                  => new OrderedMatrixPattern('square', 8, true),
-        'SQUARE_16'                 => new OrderedMatrixPattern('square', 16, true),
+        'SQUARE_4' => new OrderedMatrixPattern('square', 4, true),
     ];
 }
 
@@ -313,61 +286,13 @@ function colorAlgoGroups(): string{
 * Base arrays for algorithms and opt-groups
 */
 function bwAlgorithmModelBase(): array{
-    $ret = [
-        'Threshold',
-        new DitherAlgorithm('Threshold', 'Threshold.image', 'BwDither.threshold'),
-        new DitherAlgorithm('Adaptive Threshold', 'AdaptiveThreshold.image', 'BwDither.adaptiveThreshold'),
-        'Random',
-        new DitherAlgorithm('Random', 'Threshold.randomDither', 'BwDither.randomThreshold'),
-        new DitherAlgorithm('Simplex', 'Threshold.randomDither', 'BwDither.simplexThreshold'),
-        'Arithmetic',
-        arithmeticDitherBwBuilder('XOR (High)', 'Xor1'),
-        arithmeticDitherBwBuilder('XOR (Medium)', 'Xor3'),
-        arithmeticDitherBwBuilder('XOR (Low)', 'Xor2'),
-        arithmeticDitherBwBuilder('ADD (High)', 'Add1'),
-        arithmeticDitherBwBuilder('ADD (Medium)', 'Add3'),
-        arithmeticDitherBwBuilder('ADD (Low)', 'Add2'),
-        'Diffusion',
-        errorPropBwDitherBuilder('floydSteinberg', 'Floyd-Steinberg'),
-        errorPropBwDitherBuilder('javisJudiceNinke', 'Javis-Judice-Ninke'),
-        errorPropBwDitherBuilder('stucki'),
-        errorPropBwDitherBuilder('burkes'),
-        errorPropBwDitherBuilder('sierra3', 'Sierra 3'),
-        errorPropBwDitherBuilder('sierra2', 'Sierra 2'),
-        errorPropBwDitherBuilder('sierra1', 'Sierra 1'),
-        'Diffusion (Reduced Bleed)',
-        errorPropBwDitherBuilder('atkinson'),
-        errorPropBwDitherBuilder('reducedAtkinson'),
-    ];
+    $ret = [];
 
     return array_merge($ret, bwOrderedDitherAlgorithmModel());
 }
 
 function colorAlgorithmModelBase(): array{
-    $ret = [
-        'Threshold',
-        new DitherAlgorithm('Closest Color', 'Threshold.closestColor', 'ColorDither.closestColor'),
-        'Random',
-        new DitherAlgorithm('Random', 'Threshold.randomClosestColor', 'ColorDither.randomClosestColor'),
-        'Arithmetic',
-        arithmeticDitherColorBuilder('XOR (High)', 'Xor1'),
-        arithmeticDitherColorBuilder('XOR (Medium)', 'Xor3'),
-        arithmeticDitherColorBuilder('XOR (Low)', 'Xor2'),
-        arithmeticDitherColorBuilder('ADD (High)', 'Add1'),
-        arithmeticDitherColorBuilder('ADD (Medium)', 'Add3'),
-        arithmeticDitherColorBuilder('ADD (Low)', 'Add2'),
-        'Diffusion',
-        errorPropColorDitherBuilder('floydSteinberg', 'Floyd-Steinberg'),
-        errorPropColorDitherBuilder('javisJudiceNinke', 'Javis-Judice-Ninke'),
-        errorPropColorDitherBuilder('stucki'),
-        errorPropColorDitherBuilder('burkes'),
-        errorPropColorDitherBuilder('sierra3', 'Sierra 3'),
-        errorPropColorDitherBuilder('sierra2', 'Sierra 2'),
-        errorPropColorDitherBuilder('sierra1', 'Sierra 1'),
-        'Diffusion (Reduced Bleed)',
-        errorPropColorDitherBuilder('atkinson'),
-        errorPropColorDitherBuilder('reducedAtkinson'),
-    ];
+    $ret = [];
     return array_merge($ret, colorOrderedDitherAlgorithmModel());
 }
 
@@ -375,51 +300,8 @@ function colorOrderedDitherAlgorithmModel(): array{
     $patterns = getOrderedMatrixPatterns();
     //if using patterns greater than dimension 8 with yliluoma 1,
     //make sure to increase YLILUOMA_1_ORDERED_MATRIX_MAX_LENGTH constant in config.php
-    $yliluoma1PatternKeys = [
-        'BAYER_2' => true,
-        'BAYER_8' => true,
-        'HATCH_HORIZONTAL' => true,
-        'HATCH_VERTICAL' => true,
-        'HATCH_RIGHT' => true,
-        'HATCH_LEFT' => true,
-        'CROSS_HATCH_HORIZONTAL' => true,
-        'CROSS_HATCH_VERTICAL' => true,
-        'CROSS_HATCH_RIGHT' => true,
-        'CROSS_HATCH_LEFT' => true,
-        'ZIGZAG_HORIZONTAL_4' => true,
-        'ZIGZAG_VERTICAL_4' => true,
-        'ZIGZAG_HORIZONTAL_8' => true,
-        'ZIGZAG_VERTICAL_8' => true,
-        'CHECKERBOARD' => true,
-        'CLUSTER' => true,
-        'FISHNET' => true,
-        'HALFTONE' => true,
-        'DOT_4' => true,
-        'DOT_8' => true,
-    ];
-    $yliluoma2PatternKeys = [
-        'BAYER_2' => true,
-        'BAYER_8' => true,
-        'BAYER_16' => true,
-        'HATCH_RIGHT' => true,
-        'HATCH_LEFT' => true,
-        'CROSS_HATCH_HORIZONTAL' => true,
-        'CROSS_HATCH_VERTICAL' => true,
-        'CROSS_HATCH_RIGHT' => true,
-        'CROSS_HATCH_LEFT' => true,
-        'ZIGZAG_HORIZONTAL_4' => true,
-        'ZIGZAG_VERTICAL_4' => true,
-        'ZIGZAG_HORIZONTAL_8' => true,
-        'ZIGZAG_VERTICAL_8' => true,
-        'ZIGZAG_HORIZONTAL_16' => true,
-        'ZIGZAG_VERTICAL_16' => true,
-        'CHECKERBOARD' => true,
-        'CLUSTER' => true,
-        'FISHNET' => true,
-        'HALFTONE' => true,
-        'DOT_4' => true,
-        'DOT_8' => true,
-    ];
+    $yliluoma1PatternKeys = [];
+    $yliluoma2PatternKeys = [];
     $ret = [];
     
     foreach($patterns as $patternKey => $patternValue){

@@ -162,7 +162,7 @@ export default {
   created() {
     //select first non-custom palette
     //needs to be done here to initialize palettes correctly
-    this.selectedPaletteIndex = 1;
+    this.selectedPaletteIndex = 0;
     this.numColors = Constants.colorDitherMaxColors;
     const defaultPalettes = Palettes.get(Constants.colorDitherMaxColors);
     this.defaultPalettesLength = defaultPalettes.length;
@@ -176,7 +176,7 @@ export default {
   },
   data() {
     return {
-      selectedDitherAlgorithmIndex: 36,
+      selectedDitherAlgorithmIndex: 0,
       loadedImage: null,
       colors: [],
       //colors shadow and draggedIndex are for dragging colors in palette

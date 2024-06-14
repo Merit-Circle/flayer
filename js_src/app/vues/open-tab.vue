@@ -1,5 +1,6 @@
 <template>
   <div class="controls-tab-container" :class="$style.container">
+    <h3>Open</h3>
     <fieldset>
       <legend>Upload image from device</legend>
       <button

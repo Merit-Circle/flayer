@@ -1,17 +1,28 @@
 .global-controls-panel {
   margin: 0 $controls_gutter 16px 0;
+
   fieldset {
-    padding: 2px 0 12px;
+    padding: 2px 0;
+
+    &:not(:last-child) {
+      padding-bottom: 12px;
+    }
   }
 }
 
 .controls-tab-container {
-  & > * {
+  &:not(:last-child) {
+    margin-bottom: 16px;
+  }
+
+  & > *:not(:first-child) {
     margin-top: 16px;
   }
+
   fieldset {
     padding-left: 0;
     padding-right: 0;
+
     & > div {
       margin-bottom: 8px;
     }
