@@ -8,7 +8,7 @@
 <html>
     <head>
         <meta charset="utf-8"/>
-        <title><?= APP_NAME; ?></title>
+        <title>Flayer | Dithering Tool</title>
         <meta name="description" content="An interactive, in-browser exploration of image dithering and color quantization algorithms"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <link rel="stylesheet" type="text/css" href="<?= CSS_APP_URL; ?>"/>
